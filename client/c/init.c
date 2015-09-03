@@ -47,10 +47,6 @@ void setup(gpgme_ctx_t * context, telem_gpg_opts * options) {
   fail_if_err(error);
 }
 
-void setup_options(telem_gpg_opts * options) {
-  strcpy(options->keyring_dir, TELEM_OPT_KEYRING_DIR);
-}
-
 static void mkdirs(const char *dir) {
   char tmp[256];
   char *p = NULL;
@@ -67,4 +63,8 @@ static void mkdirs(const char *dir) {
       *p = '/';
     }
   mkdir(tmp, S_IRWXU);
+}
+void setup_options(telem_gpg_opts * options) {
+  strcpy(options->keyring_dir, TELEM_OPT_KEYRING_DIR);
+  strcpy(options->send_to, TELEM_OPT_SEND_TO);
 }
