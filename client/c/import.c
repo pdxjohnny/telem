@@ -1,8 +1,8 @@
 #include "import.h"
 
 int import (
-  gpgme_ctx_t context,
-  telem_gpg_opts options,
+  gpgme_ctx_t * context,
+  telem_gpg_opts * options,
   int num_keys,
   char ** key_path
   )
@@ -25,9 +25,9 @@ int import (
           (nul_mode? GPGME_DATA_ENCODING_URL0 : GPGME_DATA_ENCODING_URL)
         );
 
-      err = gpgme_op_import(context, data);
+      err = gpgme_op_import(*context, data);
       fail_if_err(err);
-      impres = gpgme_op_import_result(context);
+      impres = gpgme_op_import_result(*context);
       if (!impres)
         {
           fprintf(stderr, "No import result returned\n");
@@ -38,6 +38,5 @@ int import (
       gpgme_data_release(data);
     }
 
-  gpgme_release(context);
   return 0;
 }
