@@ -60,7 +60,7 @@ void encrypt (
   }
   buffer[nbytes] = '\0';
   printf("Encrypted text (%i bytes):\n%s\n", (int)nbytes, buffer);
-  /* OK */
+  free(buffer);
 
   exit(0);
 }

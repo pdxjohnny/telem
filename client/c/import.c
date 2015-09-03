@@ -1,6 +1,6 @@
 #include "import.h"
 
-int import (
+void import (
   gpgme_ctx_t * context,
   telem_gpg_opts * options,
   int num_keys,
@@ -37,6 +37,4 @@ int import (
 
       gpgme_data_release(data);
     }
-
-  return 0;
 }

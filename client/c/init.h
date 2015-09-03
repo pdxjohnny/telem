@@ -11,4 +11,4 @@
 
 void setup(gpgme_ctx_t * context, telem_gpg_opts * options);
 void setup_options(telem_gpg_opts * options);
-static void mkdirs(const char *dir);
+void mkdirs(const char *dir);

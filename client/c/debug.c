@@ -51,7 +51,7 @@ void print_import_result (gpgme_import_result_t r)
           r->not_imported);
 }
 
-static const char * nonnull (const char *s)
+const char * nonnull (const char *s)
 {
   return s? s :"[none]";
 }

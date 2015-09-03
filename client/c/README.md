@@ -23,6 +23,7 @@ Then encode a message
 ```bash
 echo "This is a test message" > test.txt
 ./test-client encrypt test.txt
+rm test.txt
 ```
 
 Dependencies

@@ -6,4 +6,4 @@
 #include <gpgme.h>
 
 void print_import_result (gpgme_import_result_t r);
-static const char * nonnull (const char *s);
+const char * nonnull (const char *s);

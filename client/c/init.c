@@ -47,7 +47,7 @@ void setup(gpgme_ctx_t * context, telem_gpg_opts * options) {
   fail_if_err(error);
 }
 
-static void mkdirs(const char *dir) {
+void mkdirs(const char *dir) {
   char tmp[256];
   char *p = NULL;
   size_t len;

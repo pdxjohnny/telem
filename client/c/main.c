@@ -24,10 +24,10 @@ int main (int argc, char **argv)
   telem_gpg_opts options;
   // The function to call
   void (*action)(
-    gpgme_ctx_t * context,
-    telem_gpg_opts * options,
-    int num_keys,
-    char ** key_path
+    gpgme_ctx_t *,
+    telem_gpg_opts *,
+    int,
+    char **
   ) = NULL;
 
   setup(&context, &options);
