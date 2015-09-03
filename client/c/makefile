@@ -6,7 +6,7 @@ LDFLAGS+=$(shell libassuan-config --libs)
 LDFLAGS+=--static
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=client
+EXECUTABLE=test-client
 
 all: $(SOURCES) $(EXECUTABLE)
 

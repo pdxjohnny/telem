@@ -6,7 +6,7 @@ Build
 
 ```bash
 make
-file ./client
+file ./test-client
 ```
 
 Dependencies

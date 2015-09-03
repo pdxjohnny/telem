@@ -5,8 +5,6 @@ keys
 !keys/README.md
 tmp
 
-client/c/gpgme
-
 bower_components/
 
 telem_*
