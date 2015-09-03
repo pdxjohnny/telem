@@ -18,5 +18,3 @@
         }                                                       \
     }                                                           \
   while (0)
-
-void init_gpgme (gpgme_protocol_t proto);
