@@ -1,4 +1,4 @@
-package main
+package crypto
 
 import (
 	"archive/zip"
@@ -14,7 +14,7 @@ import (
 	"golang.org/x/crypto/ssh/terminal"
 )
 
-func main() {
+func main2() {
 
 	// open ascii armored private key
 	from, err := os.Open("my.asc.key")

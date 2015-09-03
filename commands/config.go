@@ -4,11 +4,13 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
+	"github.com/pdxjohnny/telem/crypto"
 	"github.com/pdxjohnny/telem/frontend"
 )
 
 var ConfigOptions = map[string]interface{}{
 	"frontend": frontend.ConfigOptions,
+	"crypto":   crypto.ConfigOptions,
 }
 
 func ConfigDefaults(cmdList ...*cobra.Command) {
