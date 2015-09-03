@@ -1,3 +1,3 @@
 FROM busybox
-ADD ./telem_linux-386 /app
+ADD ./telem_linux-amd64 /app
 CMD ["/app"]

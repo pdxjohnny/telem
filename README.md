@@ -10,6 +10,8 @@ Building
 ---
 
 ```bash
+go build -o telem_linux-amd64 -tags netgo *.go
+# Or
 ./script/build
 ```
 
