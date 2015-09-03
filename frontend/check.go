@@ -1,11 +1,11 @@
 package frontend
 
 import (
-  "io"
+	"io"
 
-  // "golang.org/x/crypto/openpgp"
+	// "golang.org/x/crypto/openpgp"
 )
 
 func Check(uploadedFile io.Reader) bool {
-  return true
+	return true
 }
