@@ -1,8 +1,8 @@
 package crypto
 
 import (
-	"bytes"
 	"bufio"
+	"bytes"
 
 	"golang.org/x/crypto/openpgp"
 	"golang.org/x/crypto/openpgp/armor"

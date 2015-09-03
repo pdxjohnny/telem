@@ -19,7 +19,7 @@ var ConfigOptions = map[string]interface{}{
 	},
 	"path": map[string]interface{}{
 		"value": "keys/crypto/",
-		"help":  "Where generated keys are writen to",
+		"help":  "Where generated keys are writen to, blank for don't write",
 	},
 	"gen": map[string]interface{}{
 		"value": false,
