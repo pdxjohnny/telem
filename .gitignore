@@ -1,0 +1,7 @@
+build/
+Godeps
+!Godeps/Godeps.json
+
+bower_components/
+
+telem_*

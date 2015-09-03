@@ -1,0 +1,7 @@
+FROM pdxjohnny/gox
+
+ENV GOPATH /go/src/github.com/pdxjohnny/telem/Godeps/_workspace:/go
+
+WORKDIR /go/src/github.com/pdxjohnny/telem
+
+ADD . /go/src/github.com/pdxjohnny/telem
