@@ -35,7 +35,7 @@ func Upload(w http.ResponseWriter, req *http.Request) {
 
 	fmt.Fprintf(w, "%v", handler.Header)
 
-  os.MkdirAll(viper.GetString("upload"), 0777)
+  os.MkdirAll(viper.GetString("upload"), 0700)
 	f, err := os.OpenFile(
 		viper.GetString("upload")+handler.Filename,
 		os.O_WRONLY|os.O_CREATE,
