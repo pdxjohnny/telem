@@ -3,19 +3,12 @@ package commands
 import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+
+	"github.com/pdxjohnny/telem/frontend"
 )
 
 var ConfigOptions = map[string]interface{}{
-	"frontend": map[string]interface{}{
-		"port": map[string]interface{}{
-			"value": 25000,
-			"help":  "Port to listen on",
-		},
-		"address": map[string]interface{}{
-			"value": "0.0.0.0",
-			"help":  "Address  to bind to",
-		},
-	},
+	"frontend": frontend.ConfigOptions,
 }
 
 func ConfigDefaults(cmdList ...*cobra.Command) {
@@ -54,7 +47,7 @@ func ConfigFlags(cmdList ...*cobra.Command) {
 }
 
 func ConfigBindFlags(cmd *cobra.Command) {
-	for index, _ := range ConfigOptions {
+	for index, _ := range ConfigOptions[cmd.Use].(map[string]interface{}) {
 		viper.BindPFlag(index, cmd.Flags().Lookup(index))
 	}
 }

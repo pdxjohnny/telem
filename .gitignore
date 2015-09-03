@@ -1,6 +1,8 @@
 build/
 Godeps
 !Godeps/Godeps.json
+keys
+!keys/README.md
 
 bower_components/
 
