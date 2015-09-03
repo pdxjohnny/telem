@@ -31,6 +31,7 @@ int main (int argc, char **argv)
   ) = NULL;
 
   setup(&context, &options);
+  telem_gpg_opts_flags(argc, argv, &options);
 
   argv++;
   if (argc > 2) {

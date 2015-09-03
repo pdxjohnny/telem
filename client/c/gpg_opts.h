@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 // Options for telem_gpg
 #ifndef TELEM_OPT
 #define TELEM_OPT 1
@@ -15,3 +19,9 @@ typedef struct telem_gpg_opts_struct {
 } telem_gpg_opts;
 
 #endif
+
+void telem_gpg_opts_flags (
+  int argc,
+  char ** argv,
+  telem_gpg_opts * options
+);
