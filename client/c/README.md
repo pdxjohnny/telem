@@ -9,6 +9,22 @@ make
 file ./test-client
 ```
 
+Usage
+---
+
+First import a public private key pair
+```bash
+./test-client import \
+  ../../keys/crypto/public.pgp \
+  ../../keys/crypto/private.pgp
+```
+
+Then encode a message
+```bash
+echo "This is a test message" > test.txt
+./test-client encrypt test.txt
+```
+
 Dependencies
 ---
 

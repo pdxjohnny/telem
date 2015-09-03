@@ -15,6 +15,7 @@ void encrypt (
   char *buffer;
   ssize_t nbytes;
 
+  printf("%s\n", options->send_to);
   error = gpgme_op_keylist_start(*context, options->send_to, 1);
   fail_if_err(error);
   error = gpgme_op_keylist_next(*context, &recipients[0]);

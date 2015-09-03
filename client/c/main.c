@@ -34,7 +34,6 @@ int main (int argc, char **argv)
 
   argv++;
   if (argc > 2) {
-    printf("%s\n", argv[0]);
     if (0 == strncmp("import", argv[0], TELEM_STRING_SIZE)) {
       action = import;
     } else if (0 == strncmp("encrypt", argv[0], TELEM_STRING_SIZE)) {
