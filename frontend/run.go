@@ -10,7 +10,7 @@ import (
 
 func Run() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", Example)
+	mux.HandleFunc("/", Form)
 	mux.HandleFunc("/upload", Upload)
 	web.Start(
 		mux,

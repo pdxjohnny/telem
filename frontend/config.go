@@ -18,7 +18,7 @@ var ConfigOptions = map[string]interface{}{
 		"help":  "Key file to use for webserver",
 	},
 	"upload": map[string]interface{}{
-		"value": "tmp/upload/",
+		"value": "tmp/frontend/uploaded/",
 		"help":  "Where uploaded files are stored",
 	},
 }

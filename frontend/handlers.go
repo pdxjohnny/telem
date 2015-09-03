@@ -11,7 +11,7 @@ import (
 	"github.com/pdxjohnny/telem/log"
 )
 
-func Example(w http.ResponseWriter, req *http.Request) {
+func Form(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	w.Write([]byte(`<html>
 <head>
@@ -29,20 +29,33 @@ func Example(w http.ResponseWriter, req *http.Request) {
 func Upload(w http.ResponseWriter, req *http.Request) {
 	req.ParseMultipartForm(32 << 20)
 
-	file, handler, err := req.FormFile("file")
-	log.PrintError("frontend upload", err)
-	defer file.Close()
+	uploadedFile, handler, err := req.FormFile("file")
+	if log.PrintError("frontend upload", err) != nil {
+  	fmt.Fprintf(w, "ERROR")
+    return
+  }
+	defer uploadedFile.Close()
 
-	fmt.Fprintf(w, "%v", handler.Header)
-
-  os.MkdirAll(viper.GetString("upload"), 0700)
-	f, err := os.OpenFile(
+  err = os.MkdirAll(viper.GetString("upload"), 0700)
+	if log.PrintError("frontend upload", err) != nil {
+  	fmt.Fprintf(w, "ERROR")
+    return
+  }
+	serverFile, err := os.OpenFile(
 		viper.GetString("upload")+handler.Filename,
 		os.O_WRONLY|os.O_CREATE,
 		0600,
 	)
-	log.PrintError("frontend upload", err)
-	defer f.Close()
+	if log.PrintError("frontend upload", err) != nil {
+  	fmt.Fprintf(w, "ERROR")
+    return
+  }
+	defer serverFile.Close()
 
-	io.Copy(f, file)
+  if !Check(uploadedFile) {
+  	fmt.Fprintf(w, "ERROR")
+    return
+  }
+	io.Copy(serverFile, uploadedFile)
+	fmt.Fprintf(w, "OK")
 }

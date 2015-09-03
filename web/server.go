@@ -16,7 +16,6 @@ func Metric(increment int64, handler func(http.ResponseWriter, *http.Request)) f
 
 func Start(mux *http.ServeMux, address, port, cert, key string) {
 	listen := fmt.Sprintf("%s:%s", address, port)
-	fmt.Println(address, port, cert, key)
 	if cert == "" || key == "" {
 		fmt.Printf("About to listen on http://%s/\n", listen)
 		err := http.ListenAndServe(listen, mux)
