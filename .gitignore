@@ -3,6 +3,7 @@ Godeps
 !Godeps/Godeps.json
 keys
 !keys/README.md
+tmp
 
 bower_components/
 

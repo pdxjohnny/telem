@@ -1,11 +1,11 @@
 package log
 
 import (
-  "fmt"
+	"fmt"
 )
 
-func PrintError(prepend string, err error)  {
-  if err != nil {
-    fmt.Printf("%s:\t%s\n", prepend, err)
-  }
+func PrintError(prepend string, err error) {
+	if err != nil {
+		fmt.Printf("ERROR %s:\t%s\n", prepend, err)
+	}
 }

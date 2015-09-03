@@ -1,20 +1,22 @@
 package frontend
 
 import (
-  "net/http"
+	"net/http"
 
-  "github.com/spf13/viper"
+	"github.com/spf13/viper"
 
-  "github.com/pdxjohnny/telem/web"
+	"github.com/pdxjohnny/telem/web"
 )
 
 func Run() {
-  mux := http.NewServeMux()
-  web.Start(
-    mux,
-    viper.GetString("address"),
-    viper.GetString("port"),
-    viper.GetString("cert"),
-    viper.GetString("key"),
-  )
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", Example)
+	mux.HandleFunc("/upload", Upload)
+	web.Start(
+		mux,
+		viper.GetString("address"),
+		viper.GetString("port"),
+		viper.GetString("cert"),
+		viper.GetString("key"),
+	)
 }
